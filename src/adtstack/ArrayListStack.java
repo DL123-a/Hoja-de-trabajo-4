@@ -1,13 +1,13 @@
 package adtstack;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
-public class VectorStack<T> extends AbstractStack<T> {
+public class ArrayListStack<T> extends AbstractStack<T> {
 
-    private Vector<T> data;
+    private ArrayList<T> data;
 
-    public VectorStack() {
-        data = new Vector<>();
+    public ArrayListStack() {
+        data = new ArrayList<>();
     }
 
     @Override
@@ -18,7 +18,7 @@ public class VectorStack<T> extends AbstractStack<T> {
     @Override
     public T pop() {
         if (isEmpty()) {
-            throw new RuntimeException("Stack vacio");
+            throw new RuntimeException("Stack vacío");
         }
         return data.remove(data.size() - 1);
     }
@@ -26,7 +26,7 @@ public class VectorStack<T> extends AbstractStack<T> {
     @Override
     public T peek() {
         if (isEmpty()) {
-            throw new RuntimeException("Stack vacio");
+            throw new RuntimeException("Stack vacío");
         }
         return data.get(data.size() - 1);
     }
