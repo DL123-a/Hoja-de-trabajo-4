@@ -1,4 +1,4 @@
-
+package adtlista;
 public class DoublyLinkedList<T> extends AbstractList<T> {
 
     private class Node {

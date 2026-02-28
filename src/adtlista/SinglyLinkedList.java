@@ -1,4 +1,4 @@
-
+package adtlista;
 
 public class SinglyLinkedList<T> extends AbstractList<T> {
 

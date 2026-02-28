@@ -1,4 +1,4 @@
-
+package adtlista;
 public interface List<T> {
 
     void addFirst(T value);

@@ -1,30 +1,38 @@
 package main;
 
-import adtstack.Stack;
-import adtstack.VectorStack;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 import calculadora.InfixPostfix;
 import calculadora.PostfixEval;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
 
-        // Crear stack manualmente (por ahora fijo)
-        Stack<Integer> testStack = new VectorStack<>();
+        String infix = "";
 
-        testStack.push(10);
-        testStack.push(20);
+        try {
+            File file = new File("datos.txt");
+            Scanner scanner = new Scanner(file);
 
-        System.out.println("Prueba Stack pop: " + testStack.pop());
+            if (scanner.hasNextLine()) {
+                infix = scanner.nextLine();
+            }
 
-        // Expresion de prueba
-        String infix = "(10+20)*9";
+            scanner.close();
 
-        // Convertir a postfix
+        } catch (FileNotFoundException e) {
+            System.out.println("No se encontro el archivo datos.txt");
+            return;
+        }
+
+        System.out.println("Expresion infix: " + infix);
+
         String postfix = InfixPostfix.convert(infix);
         System.out.println("Postfix: " + postfix);
 
-        // Evaluar postfix
         int result = PostfixEval.evaluate(postfix);
         System.out.println("Resultado: " + result);
     }
