@@ -1,0 +1,5 @@
+p
+
+public class main {
+    
+}
